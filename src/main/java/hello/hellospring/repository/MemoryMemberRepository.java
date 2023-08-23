@@ -3,6 +3,7 @@ package hello.hellospring.repository;
 import hello.hellospring.domain.Member;
 
 import java.util.*;
+import java.util.stream.Stream;
 
 public class MemoryMemberRepository implements MemberRepository {
     private static Map<Long, Member> store = new HashMap<>();
@@ -23,6 +24,10 @@ public class MemoryMemberRepository implements MemberRepository {
 
     @Override
     public Optional<Member> findByName(String name) {
+//        Collection<Member> values = store.values();
+//        Stream<Member> stream = store.values().stream();
+//        Optional<Member> any = store.values().stream().filter(member -> member.getName().equals(name)).findAny();
+//        Member member1 = store.values().stream().filter(member -> member.getName().equals(name)).findAny().get();
         return store.values().stream().filter(member -> member.getName().equals(name)).findAny();
     }
 

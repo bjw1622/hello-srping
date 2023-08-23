@@ -13,6 +13,7 @@ class MemoryMemberRepositoryTest {
 
     // 메서드가 하나씩 끝나고나서 실행
     // 데이터들이 겹치지 않기 위해서 메서드 실행 후 실행해줘서 비우기
+    // 각 테스트 메서드가 실행된 후에 필요한 정리 작업을 수행 할 수 있는 것
     @AfterEach
     public void afterEach(){
         repository.clearStore();
