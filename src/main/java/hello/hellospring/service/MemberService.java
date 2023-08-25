@@ -12,10 +12,10 @@ import java.util.Optional;
 public class MemberService {
     private final MemberRepository memberRepository;
 
+//    @Autowired
     // MemberRepository 직접 만드는게 아닌 외부에서 넣어주는 것
     // 내가 직접 new 하지 않음
     // 이게 바로 di (외부에서 넣어줌)
-    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
