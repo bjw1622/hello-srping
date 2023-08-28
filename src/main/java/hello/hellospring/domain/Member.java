@@ -1,7 +1,17 @@
 package hello.hellospring.domain;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 public class Member {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    // 컬럼 네임이 매핑이 된다
+    @Column(name="username")
     private String name;
 
     public Long getId() {
